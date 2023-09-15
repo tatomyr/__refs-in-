@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: 18
 
-      - run: npx --yes @redocly/cli@latest join descriptions\*.yaml  -o joint.yaml
+      - run: npx --yes @redocly/cli@latest join descriptions/*.yaml  -o joint.yaml

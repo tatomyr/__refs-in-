@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  
+  run-smoke--npm--node-18--windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/cache@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: npx --yes @redocly/cli@latest join ./descriptions/*.yaml  -o ./joint.yaml
